@@ -1,0 +1,35 @@
+Data Structures:
+    Linked List
+    Stack
+    Queue
+    Hash Table
+    Dynamic array
+
+Common Algorithms:
+    Binary search
+    Quick pow
+
+Graphs:
+    DFS
+    BFS
+    Topological sort
+    Kahn's Algorithm
+    Dijkstra
+    Floyd-Warshall
+    Bellman-Ford Algorithm
+    Kruskal Algorithm
+    Prim's Algorithm
+
+Trees:
+    Binary Tree
+    Binary Search Tree
+    AVL Tree
+    Red-Black Tree
+
+Sortings:
+    Bubble sort
+    Quick sort
+    Insertion sort
+    Merge sort
+    Selection sort
+    
