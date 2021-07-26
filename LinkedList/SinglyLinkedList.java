@@ -1,5 +1,5 @@
 public class SinglyLinkedList {
-    class Node {
+    private class Node {
         int data;
         Node next;
 
@@ -138,21 +138,7 @@ public class SinglyLinkedList {
             prev = current;
             current = next;
         }
-
+        tail = head;
         head = prev;
-    }
-
-    public static void main(String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
-        list.add(10);
-        list.add(20);
-        list.add(30);
-        list.add(40);
-        list.insertToPosition(2, 100);
-        list.remove(10);
-        list.removeByPosition(2);
-        list.display();
-        list.reverse();
-        list.display();
     }
 }
