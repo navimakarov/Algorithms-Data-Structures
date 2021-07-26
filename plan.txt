@@ -1,6 +1,4 @@
 Data Structures:
-    Stack
-    Queue
     Hash Table
     Dynamic array
 
