@@ -30,3 +30,5 @@ Sortings:
     Merge sort
     Selection sort
     
+
+*Regular Expressions
