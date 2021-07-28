@@ -1,10 +1,5 @@
 Data Structures:
-    Hash Table
-    Dynamic array
-
-Common Algorithms:
-    Binary search
-    Quick pow
+    Heap
 
 Graphs:
     DFS
@@ -22,6 +17,7 @@ Trees:
     Binary Search Tree
     AVL Tree
     Red-Black Tree
+    Suffix tree
 
 Sortings:
     Bubble sort
@@ -32,3 +28,5 @@ Sortings:
     
 
 *Regular Expressions
+*Dynamic Programming
+*Sliding window

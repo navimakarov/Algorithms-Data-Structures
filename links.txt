@@ -1,2 +1,5 @@
 https://leetcode.com/explore/featured/card/top-interview-questions-easy/
 https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions
+https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
+Crash course(Computer Science)
+algoexpert.io
