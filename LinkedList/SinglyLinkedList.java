@@ -141,4 +141,40 @@ public class SinglyLinkedList {
         tail = head;
         head = prev;
     }
+
+    public static Node findLoop(Node head) {
+		Node slow = head.next;
+		Node fast = head.next.next;
+		while(slow != fast) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		slow = head;
+		while(slow != fast) {
+			slow = slow.next;
+			fast = fast.next;
+		}
+		return slow;
+  }
+
+  // k starting from 1
+  public static void removeKthNodeFromEnd(Node head, int k) {
+	Node first = head, second = head;
+    int counter = 1;
+		while(counter <= k) {
+			second = second.next;
+			counter++;
+		}
+		if(second == null) {
+			head.value = head.next.value;
+			head.next = head.next.next;
+		}
+		else {
+			while(second.next != null) {
+				first = first.next;
+				second = second.next;
+			}
+			first.next = first.next.next;
+		}
+  }
 }
