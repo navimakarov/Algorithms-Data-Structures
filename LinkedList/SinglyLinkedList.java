@@ -174,21 +174,20 @@ public class SinglyNode {
         if(head == null || head.next == null)
             return head;
         Node prev = null;
-        Node current = head;
         Node next = head.next;
         Node res = next;
         while(next != null) {
             if(prev != null) {
                 prev.next = next;
             }
-            current.next = next.next;
-            next.next = current;
+            head.next = next.next;
+            next.next = head;
 
-            prev = current;
-            current = prev.next;
-            if(current == null)
+            prev = head;
+            head = prev.next;
+            if(head == null)
                 break;
-            next = current.next;
+            next = head.next;
         }
         return res;
     }
