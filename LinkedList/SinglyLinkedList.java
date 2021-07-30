@@ -170,6 +170,29 @@ public class SinglyNode {
         }
     }
 
+    public Node nodeSwap(Node head) {
+        if(head == null || head.next == null)
+            return head;
+        Node prev = null;
+        Node current = head;
+        Node next = head.next;
+        Node res = next;
+        while(next != null) {
+            if(prev != null) {
+                prev.next = next;
+            }
+            current.next = next.next;
+            next.next = current;
+
+            prev = current;
+            current = prev.next;
+            if(current == null)
+                break;
+            next = current.next;
+        }
+        return res;
+    }
+
     public int size(Node head) {
         int size = 0;
         while(head != null) {
