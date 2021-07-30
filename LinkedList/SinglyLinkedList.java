@@ -1,4 +1,4 @@
-public class SinglyLinkedList {
+public class SinglyNode {
     private class Node {
         int data;
         Node next;
@@ -142,39 +142,40 @@ public class SinglyLinkedList {
         head = prev;
     }
 
-    public static Node findLoop(Node head) {
-		Node slow = head.next;
-		Node fast = head.next.next;
-		while(slow != fast) {
-			slow = slow.next;
-			fast = fast.next.next;
-		}
-		slow = head;
-		while(slow != fast) {
-			slow = slow.next;
-			fast = fast.next;
-		}
-		return slow;
-  }
+    public Node shiftNode(Node head, int k) {
+        Node first = head;
+        Node second = head;
+        k %= size(head);
+        if(k < 0) {
+            k += size(head);
+        }
+        for(int i = 0; i < k; i++) {
+            second = second.next;
+        }
+        if(second == null) {
+            return head;
+        }
+        else {
+            while(second.next != null) {
+                first = first.next;
+                second = second.next;
+            }
+            if(first.next == null)
+                return head;
 
-  // k starting from 1
-  public static void removeKthNodeFromEnd(Node head, int k) {
-	Node first = head, second = head;
-    int counter = 1;
-		while(counter <= k) {
-			second = second.next;
-			counter++;
-		}
-		if(second == null) {
-			head.value = head.next.value;
-			head.next = head.next.next;
-		}
-		else {
-			while(second.next != null) {
-				first = first.next;
-				second = second.next;
-			}
-			first.next = first.next.next;
-		}
-  }
+            Node newHead = first.next;
+            first.next = null;
+            second.next = head;
+            return newHead;
+        }
+    }
+
+    public int size(Node head) {
+        int size = 0;
+        while(head != null) {
+            head = head.next;
+            size++;
+        }
+        return size;
+    }
 }
