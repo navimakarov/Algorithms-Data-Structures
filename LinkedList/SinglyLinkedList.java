@@ -170,6 +170,16 @@ public class SinglyNode {
         }
     }
 
+    public Node nodeSwapRec(Node head) {
+        if(head == null || head.next == null)
+            return head;
+
+        Node nextNode = head.next;
+        head.next = nodeSwapRec(head.next.next);
+        nextNode.next = head;
+        return nextNode;
+    }
+
     public Node nodeSwap(Node head) {
         if(head == null || head.next == null)
             return head;
