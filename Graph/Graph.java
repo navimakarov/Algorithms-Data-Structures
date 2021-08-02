@@ -119,6 +119,33 @@ public class Graph {
         }
     }
 
+    Stack<Integer> stack;
+    public void topologicalSort() {
+        stack = new Stack<>();
+        for(int i = 0; i < size; i++) {
+            visited[i] = false;
+        }
+        for(int i = 0; i < size; i++) {
+            if(!visited[i]) {
+                topologicalSortUtil(i);
+            }
+        }
+        while (!stack.empty())
+            System.out.print(stack.pop() + " ");
+        System.out.println();
+    }
+
+    private void topologicalSortUtil(int vertex) {
+        visited[vertex] = true;
+
+        for(GraphNode node : adj_list.get(vertex)) {
+            if(!visited[node.vertex])
+                topologicalSortUtil(node.vertex);
+        }
+
+        stack.push(vertex);
+    }
+
     public void addEdge(int vertex1, int vertex2) {
         matrix[vertex1][vertex2] = 1;
         adj_list.get(vertex1).add(new GraphNode(vertex2));
@@ -167,7 +194,14 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph(16, false, true);
+        Graph graph = new Graph(6, true, false);
+        graph.addEdge(5, 2);
+        graph.addEdge(5, 0);
+        graph.addEdge(4, 0);
+        graph.addEdge(4, 1);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 1);
+        /*
         graph.addEdge(0, 1, 10);
         graph.addEdge(0, 2, 10);
         graph.addEdge(0, 3, 10);
@@ -187,6 +221,8 @@ public class Graph {
         graph.addEdge(11, 14, 200);
         graph.addEdge(14, 15, 300);
 
+         */
+
         System.out.println("List: ");
         System.out.println("@@@@@@@@@@@@@@@@@@@");
         graph.printList();
@@ -204,6 +240,11 @@ public class Graph {
         System.out.println("BFS: ");
         System.out.println("@@@@@@@@@@@@@@@@@@@");
         graph.bfs();
+        System.out.println("@@@@@@@@@@@@@@@@@@@");
+
+        System.out.println("Topological sort: ");
+        System.out.println("@@@@@@@@@@@@@@@@@@@");
+        graph.topologicalSort();
         System.out.println("@@@@@@@@@@@@@@@@@@@");
     }
 }

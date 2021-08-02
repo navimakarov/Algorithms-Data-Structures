@@ -4,6 +4,7 @@ Data Structures:
 Graphs:
     Topological sort
     Kahn's Algorithm
+    Loop detection(Tarjan?)
     Dijkstra
     Floyd-Warshall
     Bellman-Ford Algorithm
@@ -13,9 +14,6 @@ Graphs:
 Trees:
     Binary Tree
     Binary Search Tree
-    AVL Tree
-    Red-Black Tree
-    Suffix tree
 
 Sortings:
     Bubble sort
