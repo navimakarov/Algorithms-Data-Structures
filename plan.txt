@@ -2,8 +2,6 @@ Data Structures:
     Heap
 
 Graphs:
-    DFS
-    BFS
     Topological sort
     Kahn's Algorithm
     Dijkstra
