@@ -2,8 +2,6 @@ Data Structures:
     Heap
 
 Graphs:
-    Topological sort
-    Kahn's Algorithm
     Loop detection(Tarjan?)
     Dijkstra
     Floyd-Warshall

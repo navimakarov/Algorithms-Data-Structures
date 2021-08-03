@@ -146,6 +146,40 @@ public class Graph {
         stack.push(vertex);
     }
 
+    public void kahnTopologicalSort() {
+        int[] dependencies = new int[size];
+        for(int i = 0; i < size; i++) {
+            dependencies[i] = 0;
+        }
+
+        for(int i = 0; i < size; i++) {
+            for(GraphNode node : adj_list.get(i))
+                dependencies[node.vertex]++;
+        }
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i = 0; i < size; i++) {
+            if(dependencies[i] == 0) {
+                queue.add(i);
+            }
+        }
+        ArrayList<Integer> res = new ArrayList<>();
+        int cnt = 0;
+        while(!queue.isEmpty()) {
+            int vertex = queue.poll();
+            for(GraphNode node : adj_list.get(vertex)){
+                if(--dependencies[node.vertex] == 0)
+                    queue.add(node.vertex);
+            }
+            res.add(vertex);
+            cnt++;
+        }
+        if(cnt != size) {
+            System.out.println("Loop detected");
+            return;
+        }
+        System.out.println(res);
+    }
+
     public void addEdge(int vertex1, int vertex2) {
         matrix[vertex1][vertex2] = 1;
         adj_list.get(vertex1).add(new GraphNode(vertex2));
@@ -245,6 +279,11 @@ public class Graph {
         System.out.println("Topological sort: ");
         System.out.println("@@@@@@@@@@@@@@@@@@@");
         graph.topologicalSort();
+        System.out.println("@@@@@@@@@@@@@@@@@@@");
+
+        System.out.println("Kahn's Topological sort: ");
+        System.out.println("@@@@@@@@@@@@@@@@@@@");
+        graph.kahnTopologicalSort();
         System.out.println("@@@@@@@@@@@@@@@@@@@");
     }
 }
