@@ -23,6 +23,29 @@ public class Graph {
             return "Vertex: " + vertex + " Weight: " + weight;
         }
     }
+
+    static class Edge {
+        int src, dst, weight;
+
+        Edge(int src, int dst, int weight) {
+            this.src = src;
+            this.dst = dst;
+            this.weight = weight;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Edge edge = (Edge) o;
+            return src == edge.src && dst == edge.dst && weight == edge.weight;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(src, dst, weight);
+        }
+    }
     ArrayList<ArrayList<GraphNode>> adj_list;
     int[][] matrix;
     int size;
@@ -43,6 +66,9 @@ public class Graph {
         visited = new boolean[size];
     }
 
+    /**
+     * Time complexity - O(V^2) - matrix, O(V+E) - adj list
+     */
     public void dfs() {
         for(int i = 0; i < size; i++) {
             visited[i] = false;
@@ -56,6 +82,9 @@ public class Graph {
         }
     }
 
+    /**
+     * Time complexity - O(V^2) - matrix, O(V+E) - adj list
+     */
     public void bfs() {
         for(int i = 0; i < size; i++) {
             visited[i] = false;
@@ -120,6 +149,10 @@ public class Graph {
     }
 
     Stack<Integer> stack;
+
+    /**
+     * Time complexity = DFS = O(V+E) or O(V^2) for matrix
+     */
     public void topologicalSort() {
         stack = new Stack<>();
         for(int i = 0; i < size; i++) {
@@ -146,6 +179,9 @@ public class Graph {
         stack.push(vertex);
     }
 
+    /**
+     * Time complexity - O(V+E)
+     */
     public void kahnTopologicalSort() {
         int[] dependencies = new int[size];
         for(int i = 0; i < size; i++) {
@@ -198,6 +234,26 @@ public class Graph {
         }
     }
 
+    public void removeEdge(int vertex1, int vertex2) {
+        matrix[vertex1][vertex2] = 0;
+        GraphNode toRemove = null;
+        for(GraphNode node : adj_list.get(vertex1)) {
+            if(node.vertex == vertex2) {
+                adj_list.get(vertex1).remove(node);
+                break;
+            }
+        }
+        if(!isOriented) {
+            for(GraphNode node : adj_list.get(vertex2)) {
+                if(node.vertex == vertex1) {
+                    adj_list.get(vertex2).remove(node);
+                    break;
+                }
+            }
+            matrix[vertex2][vertex1] = 0;
+        }
+    }
+
     public void printMatrix() {
         for(int i = 0; i < size; i++) {
             for(int j = 0; j < size; j++) {
@@ -211,6 +267,116 @@ public class Graph {
         for(int i = 0; i < size; i++) {
             System.out.println(adj_list.get(i));
         }
+    }
+
+    /**
+     * Time complexity - O(V^2) - matrix, O(E*log(V)) - adj list
+     */
+    public void primAlgorithm() {
+        boolean[] visited = new boolean[size];
+        int[] key = new int[size];
+        int[] parent = new int[size];
+
+        for(int i = 0; i < size; i++) {
+            visited[i] = false;
+            key[i] = Integer.MAX_VALUE;
+        }
+        key[0] = 0;
+        parent[0] = -1;
+        for(int count = 0; count < size-1; count++) {
+            int u = minKey(key, visited);
+            visited[u] = true;
+
+            for(int i = 0; i < size; i++) {
+                if(matrix[u][i] != 0 && !visited[i] && matrix[u][i] < key[i]) {
+                    key[i] = matrix[u][i];
+                    parent[i] = u;
+                }
+            }
+        }
+        printMST(parent);
+    }
+
+    public void kruskalAlgorithm() {
+        ArrayList<Edge> edges = new ArrayList<>();
+        for(int i = 0; i < size; i++) {
+            for(GraphNode node : adj_list.get(i)) {
+                Edge e1 = new Edge(i, node.vertex, node.weight);
+                Edge e2 = new Edge(node.vertex, i, node.weight);
+                if(!edges.contains(e1) && !edges.contains(e2))
+                    edges.add(e1);
+            }
+        }
+        edges.sort(new Comparator<Edge>() {
+            @Override
+            public int compare(Edge o1, Edge o2) {
+                if(o1.weight > o2.weight)
+                    return 1;
+                else if(o1.weight < o2.weight)
+                    return -1;
+                return 0;
+            }
+        });
+
+        Graph res = new Graph(size, false, true);
+        int count = 0;
+        while(count < size-1) {
+            Edge edge = edges.get(0);
+            edges.remove(0);
+
+            res.addEdge(edge.src, edge.dst, edge.weight);
+            if(res.isCyclic())
+                res.removeEdge(edge.src, edge.dst);
+            else {
+                count++;
+            }
+        }
+        for(int i = 0; i < res.adj_list.size(); i++) {
+            for(GraphNode node: res.adj_list.get(i))
+                System.out.println(i + "-" + node.vertex + "\t" + node.weight);
+        }
+    }
+
+    public boolean isCyclic() {
+        int[] parent = new int[size];
+        boolean[] visited = new boolean[size];
+        Arrays.fill(parent, -1);
+        Arrays.fill(visited, false);
+        Queue<Integer> q = new LinkedList<>();
+        visited[0] = true;
+        q.add(0);
+        while(!q.isEmpty()) {
+            int u = q.poll();
+
+            for(int i = 0; i < adj_list.get(u).size(); i++) {
+                int v = adj_list.get(u).get(i).vertex;
+                if(!visited[v]){
+                    visited[v] = true;
+                    q.add(v);
+                    parent[v] = u;
+                }
+                else if(parent[u] != v)
+                    return  true;
+            }
+        }
+        return false;
+    }
+
+    private void printMST(int[] parent) {
+        for(int i = 1; i < size; i++) {
+            System.out.println(parent[i] + "-" + i + "\t" + matrix[parent[i]][i]);
+        }
+    }
+
+    private int minKey(int[] key, boolean[] visited) {
+        int value = Integer.MAX_VALUE, index=-1;
+        for(int i = 0; i < key.length; i++) {
+            if(key[i] < value && !visited[i]){
+                value = key[i];
+                index = i;
+            }
+        }
+        return index;
     }
 
     private void initMatrix() {
@@ -228,13 +394,19 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph(6, true, false);
-        graph.addEdge(5, 2);
-        graph.addEdge(5, 0);
-        graph.addEdge(4, 0);
-        graph.addEdge(4, 1);
-        graph.addEdge(2, 3);
-        graph.addEdge(3, 1);
+        Graph graph = new Graph(4, false, true);
+        graph.addEdge(0, 1, 10);
+        graph.addEdge(0, 2, 6);
+        graph.addEdge(0, 3, 5);
+        graph.addEdge(1, 3, 15);
+        graph.addEdge(2, 3, 4);
+
+        //graph.addEdge(5, 2);
+        //graph.addEdge(5, 0);
+        //graph.addEdge(4, 0);
+        //graph.addEdge(4, 1);
+        //graph.addEdge(2, 3);
+        //graph.addEdge(3, 1);
         /*
         graph.addEdge(0, 1, 10);
         graph.addEdge(0, 2, 10);
@@ -256,6 +428,8 @@ public class Graph {
         graph.addEdge(14, 15, 300);
 
          */
+
+        /*
 
         System.out.println("List: ");
         System.out.println("@@@@@@@@@@@@@@@@@@@");
@@ -284,6 +458,18 @@ public class Graph {
         System.out.println("Kahn's Topological sort: ");
         System.out.println("@@@@@@@@@@@@@@@@@@@");
         graph.kahnTopologicalSort();
+        System.out.println("@@@@@@@@@@@@@@@@@@@");
+
+         */
+
+        System.out.println("Prim's MST: ");
+        System.out.println("@@@@@@@@@@@@@@@@@@@");
+        graph.primAlgorithm();
+        System.out.println("@@@@@@@@@@@@@@@@@@@");
+
+        System.out.println("Kruskal's MST: ");
+        System.out.println("@@@@@@@@@@@@@@@@@@@");
+        graph.kruskalAlgorithm();
         System.out.println("@@@@@@@@@@@@@@@@@@@");
     }
 }
