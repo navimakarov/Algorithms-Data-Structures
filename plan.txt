@@ -2,7 +2,6 @@ Data Structures:
     Heap
 
 Graphs:
-    Dijkstra
     Floyd-Warshall
     Bellman-Ford Algorithm
 
@@ -18,6 +17,4 @@ Sortings:
     Selection sort
     
 
-*Regular Expressions
 *Dynamic Programming
-*Sliding window
