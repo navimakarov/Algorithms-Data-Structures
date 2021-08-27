@@ -1,8 +1,6 @@
 https://leetcode.com/explore/featured/card/top-interview-questions-easy/
 https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions
 https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
-Crash course(Computer Science)
-algoexpert.io
 https://www.makeuseof.com/tag/mock-interview-websites/
 https://www.geeksforgeeks.org/interview-preparation-for-software-developer/
 https://www.youtube.com/watch?v=YKxua0wkgD8&list=PLaYEWc-h_PAeo3bneqrs7bqUxyboBAFVq

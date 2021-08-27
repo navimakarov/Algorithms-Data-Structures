@@ -10,11 +10,8 @@ Trees:
     Binary Search Tree
 
 Sortings:
-    Bubble sort
     Quick sort
-    Insertion sort
     Merge sort
-    Selection sort
     
 
 *Dynamic Programming
