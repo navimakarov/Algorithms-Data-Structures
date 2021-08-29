@@ -4,3 +4,10 @@ https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-struct
 https://www.makeuseof.com/tag/mock-interview-websites/
 https://www.geeksforgeeks.org/interview-preparation-for-software-developer/
 https://www.youtube.com/watch?v=YKxua0wkgD8&list=PLaYEWc-h_PAeo3bneqrs7bqUxyboBAFVq
+
+
+TODO:
+1.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=binary-tree
+2.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=linked-list
+3.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=graph
+4.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=dynamic-programming
