@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=YKxua0wkgD8&list=PLaYEWc-h_PAeo3bneqrs7bqUxyboBA
 
 TODO:
 1.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=binary-tree
+1.1https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/140/introduction-to-a-bst/1017/
+1.2https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=binary-search-tree
 2.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=linked-list
 3.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=graph
 4.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=dynamic-programming
