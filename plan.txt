@@ -15,3 +15,14 @@ Sortings:
     
 
 *Dynamic Programming
+
+Tasks:
+1.https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/932/
+2.https://leetcode.com/problems/maximum-width-of-binary-tree/
+3.https://leetcode.com/problems/print-binary-tree/
+4.https://leetcode.com/problems/find-duplicate-subtrees/
+5.https://leetcode.com/problems/flip-equivalent-binary-trees/
+6.https://leetcode.com/problems/add-one-row-to-tree/
+
+Book page:
+26
