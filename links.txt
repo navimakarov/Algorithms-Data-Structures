@@ -10,12 +10,8 @@ TODO:
 2.1https://leetcode.com/explore/learn/card/linked-list/
 2.2 LRU Cache
 3.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=graph
-3.2https://leetcode.com/problems/network-delay-time/ - Дейкстра
 3.4https://leetcode.com/problems/reconstruct-itinerary/
-3.6https://leetcode.com/problems/all-paths-from-source-to-target/ - DFS with arrayList?
 3.7https://leetcode.com/problems/cheapest-flights-within-k-stops/ - BFS?, Dijkstra?
 3.8https://leetcode.com/problems/possible-bipartition/discuss/1448179/Java-or-BFS-or-Explanation - Bipatrition!!! Important algorithm
-3.9https://leetcode.com/problems/loud-and-rich/ - topological sort?
-3.10https://leetcode.com/problems/path-with-maximum-probability/ - dijkstra
 4.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=dynamic-programming
 5.https://leetcode.com/explore/learn
