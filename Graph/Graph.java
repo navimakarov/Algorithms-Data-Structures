@@ -306,6 +306,11 @@ public class Graph {
         return false;
     }
 
+    // -------------------------------------------------------------------------
+    /**
+     * Dijkstra
+     */
+    // -------------------------------------------------------------------------
     Set<Integer> discovered;
     int[] dist;
     PriorityQueue<GraphNode> pq;
@@ -339,6 +344,13 @@ public class Graph {
                 pq.add(new GraphNode(node.vertex, dist[node.vertex]));
             }
         }
+    }
+
+    /**
+     * Shortest path between all vertexes
+     */
+    public void floyd() {
+
     }
 
     // -------------------------------------------------------------------------

@@ -1,14 +1,6 @@
 Data Structures:
     Heap
 
-Graphs:
-    Floyd-Warshall
-    Bellman-Ford Algorithm
-
-Trees:
-    Binary Tree
-    Binary Search Tree
-
 Sortings:
     Quick sort
     Merge sort
@@ -17,12 +9,8 @@ Sortings:
 *Dynamic Programming
 
 Tasks:
-1.https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/932/
-2.https://leetcode.com/problems/maximum-width-of-binary-tree/
-3.https://leetcode.com/problems/print-binary-tree/
-4.https://leetcode.com/problems/find-duplicate-subtrees/
-5.https://leetcode.com/problems/flip-equivalent-binary-trees/
-6.https://leetcode.com/problems/add-one-row-to-tree/
+1.https://leetcode.com/problems/sort-list/
+2.https://leetcode.com/problems/insertion-sort-list/
+3. Алгоритм Флойда-Уоршела, цикл в ориентированом графе, повторить Крускала + Прима, Дейкстра!!!
 
-Book page:
-26
+CoderPad.io, Google Docs - practice it

@@ -31,8 +31,6 @@ public class BinarySearchTree {
             current.left = addRecursive(current.left, value);
         else if(value > current.val)
             current.right = addRecursive(current.right, value);
-        else
-            return current;
 
         return current;
     }
@@ -85,6 +83,20 @@ public class BinarySearchTree {
 
     private int findSmallestValue(Node current) {
         return current.left == null ? current.val : findSmallestValue(current.left);
+    }
+
+    boolean balanced = true;
+    public boolean isBalanced(Node root) {
+        helper(root);
+        return root == null || balanced;
+    }
+    
+    public int helper(Node node){
+        if(node == null) return 0;
+        int heightLeft = helper(node.left);
+        int heightRight = helper(node.right);
+        balanced &= Math.abs(heightLeft - heightRight) <= 1;
+        return 1 + Math.max(heightLeft, heightRight);
     }
 
     /**
@@ -143,4 +155,18 @@ public class BinarySearchTree {
         }
     }
     //---------------------------------------------------------
+
+    public boolean isValidBST(Node tree) {
+        return valid(tree, null, null);
+    }
+
+    private boolean valid(Node tree, Integer low, Integer high) {
+        if(tree == null)
+            return true;
+        
+        if((low != null && tree.val <= low) || (high != null && tree.val >= high))
+            return false;
+
+        return valid(tree.left, low, root.val) && valid(tree.right, root.val, high);
+    }
 }
