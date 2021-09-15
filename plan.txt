@@ -12,5 +12,7 @@ Tasks:
 1.https://leetcode.com/problems/sort-list/
 2.https://leetcode.com/problems/insertion-sort-list/
 3. Алгоритм Флойда-Уоршела, цикл в ориентированом графе, повторить Крускала + Прима, Дейкстра!!!
+4.Union find
+5.Sliding Window
 
 CoderPad.io, Google Docs - practice it
