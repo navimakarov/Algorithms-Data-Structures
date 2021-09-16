@@ -1,0 +1,21 @@
+Graph:
+Dijkstra, Floyd, Topological Sort(*stack, kahn), Cycle detection
+Binary Tree, BST:
+* visualize traversals
+* delete node in BST
+* Node depth(algoexpert)
+* Invert binary tree
+* public int height(BinaryTree tree) {
+		return tree == null ? 0 : Math.max(height(tree.left), height(tree.right)) + 1;
+	}
+* BST validation(algoexpert)
+* https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+* is symetric tree 
+(reccursive + iterative)
+* minimum depth of a binary tree
+* maximum path sum of a binary tree
+* check if binary tree is a subtree of another binary tree
+* Lowest Common Ancestor in BST
+* palindrome in linked list
+
+https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/

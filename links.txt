@@ -1,5 +1,6 @@
 *
 PDF -> https://nsspot.herokuapp.com/code2pdf/
+https://pdftoimage.com/
 *
 
 
@@ -8,6 +9,7 @@ PDF -> https://nsspot.herokuapp.com/code2pdf/
 *https://www.makeuseof.com/tag/mock-interview-websites/
 *interviewing.io youtube videos
 *https://www.geeksforgeeks.org/interview-preparation-for-software-developer/
+*https://leetcode.com/discuss/explore/google/1326845/Have-a-Google-interview-in-6-weeks-what-should-be-the-prep-strategy
 
 TODO:
 3.4https://leetcode.com/problems/reconstruct-itinerary/
