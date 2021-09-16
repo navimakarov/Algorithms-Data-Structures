@@ -14,5 +14,7 @@ Tasks:
 3. Алгоритм Флойда-Уоршела, цикл в ориентированом графе, повторить Крускала + Прима, Дейкстра!!!
 4.Union find
 5.Sliding Window
+6.https://leetcode.com/problems/longest-common-prefix/solution/ (Suffix Trie, Preffix Trie)
+7.LRU Cache
 
 CoderPad.io, Google Docs - practice it

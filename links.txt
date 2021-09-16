@@ -10,13 +10,9 @@ PDF -> https://nsspot.herokuapp.com/code2pdf/
 *https://www.geeksforgeeks.org/interview-preparation-for-software-developer/
 
 TODO:
-2.1https://leetcode.com/explore/learn/card/linked-list/
-2.2 LRU Cache
-3.https://leetcode.com/problemset/all/?page=1&difficulty=MEDIUM&status=NOT_STARTED&topicSlugs=graph
 3.4https://leetcode.com/problems/reconstruct-itinerary/
 3.7https://leetcode.com/problems/cheapest-flights-within-k-stops/ - BFS?, Dijkstra?
 3.8https://leetcode.com/problems/possible-bipartition/discuss/1448179/Java-or-BFS-or-Explanation - Bipatrition!!! Important algorithm
 4.https://leetcode.com/study-plan/dynamic-programming/
 5.https://leetcode.com/explore/interview/card/top-interview-questions-medium/
 6.https://leetcode.com/explore/interview/card/top-interview-questions-easy/
-7.Sliding Window
