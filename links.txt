@@ -13,6 +13,5 @@ TODO:
 3.4https://leetcode.com/problems/reconstruct-itinerary/
 3.7https://leetcode.com/problems/cheapest-flights-within-k-stops/ - BFS?, Dijkstra?
 3.8https://leetcode.com/problems/possible-bipartition/discuss/1448179/Java-or-BFS-or-Explanation - Bipatrition!!! Important algorithm
-4.https://leetcode.com/study-plan/dynamic-programming/
+4.https://leetcode.com/study-plan/dynamic-programming/ (leetcode easy finish(dp left))
 5.https://leetcode.com/explore/interview/card/top-interview-questions-medium/
-6.https://leetcode.com/explore/interview/card/top-interview-questions-easy/
