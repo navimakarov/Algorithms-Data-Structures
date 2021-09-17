@@ -3,9 +3,7 @@ Dijkstra, Floyd, Topological Sort(*stack, kahn), Cycle detection
 Binary Tree, BST:
 * visualize traversals
 * delete node in BST
-* Node depth(algoexpert)
 * Invert binary tree
-* BST validation(algoexpert)
 * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 * check if binary tree is a subtree of another binary tree
 * Lowest Common Ancestor in BST
