@@ -18,5 +18,7 @@ Tasks:
 5.Sliding Window
 6.https://leetcode.com/problems/longest-common-prefix/solution/ (Suffix Trie, Preffix Trie)
 7.LRU Cache
+8.TreeInfo?(algoexpert)
+9.Binary Tree DFS traversals
 
 CoderPad.io, Google Docs - practice it
