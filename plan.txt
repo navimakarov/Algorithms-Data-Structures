@@ -2,6 +2,7 @@ https://leetcode.com/explore/featured/card/google/
 
 Data Structures:
     Heap
+    Max/Min Heap
 
 Sortings:
     Quick sort
@@ -13,7 +14,6 @@ Sortings:
 Tasks:
 1.https://leetcode.com/problems/sort-list/
 2.https://leetcode.com/problems/insertion-sort-list/
-3. Алгоритм Флойда-Уоршела, цикл в ориентированом графе, повторить Крускала + Прима, Дейкстра!!!
 4.Union find
 5.Sliding Window
 6.https://leetcode.com/problems/longest-common-prefix/solution/ (Suffix Trie, Preffix Trie)
@@ -21,4 +21,4 @@ Tasks:
 8.TreeInfo?(algoexpert)
 9.Binary Tree DFS traversals
 
-CoderPad.io, Google Docs - practice it
+Google Docs - practice it
