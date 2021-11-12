@@ -1,9 +1,5 @@
 https://leetcode.com/explore/featured/card/google/
 
-Data Structures:
-    Heap
-    Max/Min Heap
-
 Sortings:
     Quick sort
     Merge sort
@@ -14,11 +10,10 @@ Sortings:
 Tasks:
 1.https://leetcode.com/problems/sort-list/
 2.https://leetcode.com/problems/insertion-sort-list/
-4.Union find
+*4.Union find
 5.Sliding Window
-6.https://leetcode.com/problems/longest-common-prefix/solution/ (Suffix Trie, Preffix Trie)
-7.LRU Cache
-8.TreeInfo?(algoexpert)
-9.Binary Tree DFS traversals
+*7.LRU Cache
+*8.TreeInfo?(algoexpert)
+9.Trie
 
 Google Docs - practice it
