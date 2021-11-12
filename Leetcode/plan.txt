@@ -1,25 +1,21 @@
 # LEETCODE
-Swap Nodes in Pairs
-Longest Substring Without Repeating Characters
-Search Insert Position
-find-duplicate-subtrees
-Flood Fill
-Implement Stack using Queues
-Implement Queue using Stacks
-Sqrt(x)
+Longest Substring Without Repeating Characters 
+Implement Stack using Queues 
+Implement Queue using Stacks 
 Maximum Width of Binary Tree
 Isomorphic Strings
 Spiral Matrix
-Binary Tree Level Order Traversal
+Binary Tree Level Order Traversal 
 Roman to Integer
 Best Time to Buy and Sell Stock
-Rotate Image
+Rotate Image 
 Squares of a Sorted Array
 Intersection of Three Sorted Arrays
-Valid Parentheses
+Valid Parentheses 
 ArrayList to balanced binary tree
 Delete Node in a BST
 Insert into a Binary Search Tree
 
 # ALGOEXPERT
-*TODO*
+Stack Sort
+Kadane's algorithm
