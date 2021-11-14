@@ -1,7 +1,7 @@
 /**
  * Kahn's Algorithm (Topological Sort)
  */
-public void kahnTopologicalSort() {
+void kahnTopologicalSort() {
     int[] dependencies = new int[size];
     for(int i = 0; i < size; i++) {
         dependencies[i] = 0;
@@ -33,24 +33,31 @@ public void kahnTopologicalSort() {
     }
     System.out.println(res);
 }
-/*
- * Floyd Algorithm
- * Shortest path between all vertexes 
-*/
-public void floyd() {
-    int dist[][] = new int[size][size];
-    for(int i = 0; i < size; i++) {
-        for(int j = 0; j < size; j++) {
-            dist[i][j] = matrix[i][j];
-        }
-    }
 
-    for(int k = 0; k < size; k++) {
-      for(int i = 0; i < size; i++) {
-        for(int j = 0; j < size; j++) {
-            if(dist[i][k] + dist [k][j] < dist[i][j])
-                dist[i][j] = dist[i][k] + dist [k][j];
-        }
-      }
+
+/**
+ * Loop detection in DIRECTED GRAPH
+ */
+boolean containsLoop() {
+    boolean visited[] = new boolean[V];
+    Arrays.fill(visited, false);
+    for(int i = 0; i < V; i++) {
+        if(hasLoop(i, Arrays.copyOf(visited, visited.length)))
+            return true;
     }
+    return false;
+}
+
+boolean hasLoop(int node, boolean[] visited) {
+    if(visited[node]) {
+        return true;
+    }
+    visited[node] = true;
+    
+    boolean loop = false;
+    for(int adj : adj_list.get(node)) {
+        loop = loop || hasLoop(adj, visited);
+    }
+    visited[node] = false;
+    return loop;
 }

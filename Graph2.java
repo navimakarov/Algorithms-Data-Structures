@@ -4,7 +4,8 @@
 Set<Integer> discovered;
 int[] dist;
 PriorityQueue<GraphNode> pq;
-public void dijkstra(int src) {
+
+void dijkstra(int src) {
     dist = new int[size];
     for(int i = 0; i < size; i++) {
         dist[i] = Integer.MAX_VALUE;
@@ -23,7 +24,7 @@ public void dijkstra(int src) {
     }
 }
 
-private void graph_adjacentNodes(int vertex) {
+void graph_adjacentNodes(int vertex) {
     int edge_distance, new_distance;
     for(GraphNode node: adj_list.get(vertex)) {
         if(!discovered.contains(node.vertex)) {
@@ -37,30 +38,22 @@ private void graph_adjacentNodes(int vertex) {
     }
 }
 
+
 /**
- * Detecting Cycle in Undirected graph
- * BFS Approach
+ * Loop detection in UNDIRECTED GRAPH
  */
-public boolean isCyclic() {
-    int[] parent = new int[size];
-    boolean[] visited = new boolean[size];
-    Arrays.fill(parent, -1);
-    Arrays.fill(visited, false);
-    Queue<Integer> q = new LinkedList<>();
-    visited[0] = true;
-    q.add(0);
-    while(!q.isEmpty()) {
-        int u = q.poll();
-        for(int i = 0; i < adj_list.get(u).size(); i++) {
-            int v = adj_list.get(u).get(i).vertex;
-            if(!visited[v]){
-                visited[v] = true;
-                q.add(v);
-                parent[v] = u;
+public boolean hasCycle(Graph graph, int v, boolean[] visited, int parent){
+    visited[v] = true;
+    for (int w : graph.adjList.get(v)){
+        if (!visited[w]){
+            if (hasCycle(graph, w, visited, v)) {
+                return true;
             }
-            else if(parent[u] != v)
-                return  true;
+        }
+        else if (w != parent) {
+            return true;
         }
     }
+
     return false;
 }

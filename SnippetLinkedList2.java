@@ -1,7 +1,7 @@
 /**
  * Node Swap
  */
-public ListNode nodeSwap(ListNode head) {
+ListNode nodeSwap(ListNode head) {
     ListNode tmp = new ListNode(0);
     tmp.next = head;
 
@@ -26,7 +26,7 @@ public ListNode nodeSwap(ListNode head) {
  * Shift Linked List
  */
 
- public ListNode shiftLinkedList(ListNode head, int k) {
+ ListNode shiftLinkedList(ListNode head, int k) {
     ListNode listTail = head;
     int listLen = 1;
     while(listTail.next != null) {
@@ -45,4 +45,19 @@ public ListNode nodeSwap(ListNode head) {
     newTail.next = null;
     listTail.next = head;
     return newHead;
+ }
+
+ /**
+  * List Reverse
+  */
+ListNode reverse(ListNode list) {
+     ListNode prev = null, curr = list, next = null;
+     while(curr != null) {
+         next = curr.next;
+
+         curr.next = prev;
+         prev = curr;
+         curr = next;
+     }
+     return prev;
  }
