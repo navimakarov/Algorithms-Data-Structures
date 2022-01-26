@@ -1,6 +1,5 @@
 public class LongestCommonSubsequence {
-    int lcs(char[] X, char[] Y, int m, int n)
-    {
+    int lcs(char[] X, char[] Y, int m, int n){
         int L[][] = new int[m + 1][n + 1];
         
         for (int i = 0; i <= m; i++) {
@@ -15,5 +14,4 @@ public class LongestCommonSubsequence {
         }
         return L[m][n];
     }
-  
 }

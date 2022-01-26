@@ -34,7 +34,7 @@ public class Queue {
         }
     }
 
-    public void poll() {
+    public void peek() {
         if (front == rear) {
             System.out.println("Queue is Empty");
         }
